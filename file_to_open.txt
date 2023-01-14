@@ -1,0 +1,4 @@
+dingensbummens\n
+test line ohne newline und nur return
+blabla ebenso
+EOF
