@@ -1,0 +1,12 @@
+erste linie mit\n 
+zweite linie einfach mit enter
+irgendwas einfach so.. blablabla wieder enter
+
+read liest jeweils bufsize
+
+daher strjoin .. und zwischenspeichern????
+
+auszuschliessen
+read returned 0, wenn eof und negativ, wenn error
+wenn malloc null
+null, wenn nichts weiter zu lesen oder error

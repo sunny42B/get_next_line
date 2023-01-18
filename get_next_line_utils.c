@@ -1,13 +1,111 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 04:55:45 by sung-hle          #+#    #+#             */
-/*   Updated: 2023/01/01 23:21:55 by sung-hle         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < size - 1 && src[i] != 0)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(dst);
+	i = 0;
+	if (len > size)
+		return (ft_strlen(src) + size);
+	else
+	{
+		while (len + i + 1 < size && src[i] != '\0')
+		{
+			dst[len + i] = src[i];
+			i++;
+		}
+		dst[len + i] = '\0';
+		return (len + ft_strlen(src));
+	}
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+/*
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*joined;
+	size_t	len;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	joined = (char *) malloc ((len + 1) * sizeof(char));
+	if (joined == NULL)
+		return (joined);
+	else
+	{
+		ft_strlcpy(joined, s1, ft_strlen(s1) + 1);
+		ft_strlcat(joined, s2, len + 1);
+		return (joined);
+	}
+}*/
+
+char	*ft_strchr(const char *s, int c)
+{
+	int		i;
+	char	a;
+	char	*b;
+
+	i = 0;
+	a = (char) c;
+	b = (char *) s;
+	while (b[i])
+	{
+		if (b[i] == a)
+			return (&b[i]);
+		i++;
+	}
+	if (b[i] == a)
+		return (&b[i]);
+	return (0);
+}
+
+void	*ft_calloc(size_t num, size_t size)
+{
+	void	*s;
+
+	s = (void *) malloc(num * size);
+	if (s == NULL)
+		return (0);
+	else
+	{
+		ft_bzero(s, num * size);
+		return (s);
+	}
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *) s)[i] = '\0';
+		i++;
+	}
+}

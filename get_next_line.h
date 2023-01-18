@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: sung-hle <sung-hle@42student.berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:21:13 by sung-hle          #+#    #+#             */
-/*   Updated: 2023/01/01 23:21:42 by sung-hle         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:21:17 by sung-hle         ###   ########.de       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
-# include <fcntl.h>
 # include <stdio.h>
+# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
 
-typedef struct s_list
-{
-	char			*content;
-	struct s_list	*next;
-}	t_list;
-
-char	*get_next_line(int fd);
-
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+void	*ft_calloc(size_t num, size_t size);
+void	ft_bzero(void *s, size_t n);
+char    *get_next_line(int fd);
 #endif

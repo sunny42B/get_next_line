@@ -1,0 +1,11 @@
+in den buffer wird reingelesen
+
+wenn error beim lesen oder nichts mehr zu lesen, return NULL
+
+wenn file pointed to has changed, wollen wir undefined behaviour
+ebenso bei binary files
+\n, \0, fd = -1
+
+......  ...\n..  ...\n..
+
+.........\n  .....\n  ..
