@@ -1,0 +1,304 @@
+==87013== Memcheck, a memory error detector
+==87013== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==87013== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==87013== Command: ./a.out
+==87013== Parent PID: 86992
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x1093AC: gnl_join (get_next_line.c:65)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c090 is 0 bytes inside a block of size 11 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x1093CE: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c090 is 0 bytes inside a block of size 11 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x1093FC: gnl_join (get_next_line.c:69)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c090 is 0 bytes inside a block of size 11 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109648: ft_strlcpy (get_next_line_utils.c:10)
+==87013==    by 0x109413: gnl_join (get_next_line.c:69)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c090 is 0 bytes inside a block of size 11 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109625: ft_strlcpy (get_next_line_utils.c:12)
+==87013==    by 0x109413: gnl_join (get_next_line.c:69)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c090 is 0 bytes inside a block of size 11 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x109668: ft_strlcpy (get_next_line_utils.c:16)
+==87013==    by 0x109413: gnl_join (get_next_line.c:69)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c090 is 0 bytes inside a block of size 11 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x109299: bearbeiten (get_next_line.c:31)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x1092C8: bearbeiten (get_next_line.c:32)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x1092AE: bearbeiten (get_next_line.c:34)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109648: ft_strlcpy (get_next_line_utils.c:10)
+==87013==    by 0x109308: bearbeiten (get_next_line.c:40)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109625: ft_strlcpy (get_next_line_utils.c:12)
+==87013==    by 0x109308: bearbeiten (get_next_line.c:40)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x109668: ft_strlcpy (get_next_line_utils.c:16)
+==87013==    by 0x109308: bearbeiten (get_next_line.c:40)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109758: ft_strlen (get_next_line_utils.c:45)
+==87013==    by 0x109373: bearbeiten (get_next_line.c:45)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid read of size 1
+==87013==    at 0x109359: bearbeiten (get_next_line.c:47)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c142 is 18 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== Invalid free() / delete / delete[] / realloc()
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109385: bearbeiten (get_next_line.c:51)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Address 0x4a9c130 is 0 bytes inside a block of size 21 free'd
+==87013==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109529: get_line_with_n (get_next_line.c:102)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013==  Block was alloc'd at
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x1093DF: gnl_join (get_next_line.c:66)
+==87013==    by 0x109501: get_line_with_n (get_next_line.c:98)
+==87013==    by 0x1095AE: get_next_line (get_next_line.c:124)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== 
+==87013== HEAP SUMMARY:
+==87013==     in use at exit: 21 bytes in 4 blocks
+==87013==   total heap usage: 35 allocs, 35 frees, 1,634 bytes allocated
+==87013== 
+==87013== 19 bytes in 3 blocks are definitely lost in loss record 2 of 2
+==87013==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==87013==    by 0x109816: ft_calloc (get_next_line_utils.c:91)
+==87013==    by 0x109330: bearbeiten (get_next_line.c:43)
+==87013==    by 0x1095C1: get_next_line (get_next_line.c:130)
+==87013==    by 0x10922D: main (main.c:14)
+==87013== 
+==87013== LEAK SUMMARY:
+==87013==    definitely lost: 19 bytes in 3 blocks
+==87013==    indirectly lost: 0 bytes in 0 blocks
+==87013==      possibly lost: 0 bytes in 0 blocks
+==87013==    still reachable: 2 bytes in 1 blocks
+==87013==         suppressed: 0 bytes in 0 blocks
+==87013== Reachable blocks (those to which a pointer was found) are not shown.
+==87013== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==87013== 
+==87013== For lists of detected and suppressed errors, rerun with: -s
+==87013== ERROR SUMMARY: 2614 errors from 16 contexts (suppressed: 0 from 0)

@@ -27,22 +27,18 @@ static char	*bearbeiten(char **buf)
 	i = 0;
 	j = 0;
 
+	//printf("5\n");
 	len = ft_strlen(*buf);
-	//printf("len: %lu\n", len);
-
 	while ((*buf)[i] != '\0')
 	{
-		//printf("%c\n", (*buf)[i]);
 		if ((*buf)[i] == '\n')
 			break ;
 		i++;
-		//printf("%c\n", (*buf)[1]);
 	}
-	//printf("i: %lu, len: %lu\n", i, len);
-	line = (char *)ft_calloc(1, i + 1);
-	ft_strlcpy(line, *buf, i + 1);//line sollte hier fertig sein
+	//printf("%lu\n", i);
+	line = (char *)ft_calloc(1, i + 2);
+	ft_strlcpy(line, *buf, i + 2);
 	len = len - i;
-	//printf("line: %s\n", line);
 	newbuf = *buf;
 	*buf = (char *)ft_calloc(1, len + 1);
 	i++;
@@ -52,10 +48,11 @@ static char	*bearbeiten(char **buf)
 		i++;
 		j++;
 	}
-	//ft_strlcpy(*buf, ft_strchr(newbuf, '\n'), len + 1);
-	//printf("ft_strchr: %s\n", ft_strchr(newbuf, '\n'));
-	//printf("*buf: %s\n", *buf);
 	free(newbuf);
+	//if (ft_strchr(*buf, EOF))
+	//	return (*buf);
+	//printf("*buf : %s\n", *buf);
+	//printf("line : %s\n", line);
 	return (line);
 }
 
@@ -64,12 +61,14 @@ static char	*gnl_join(char *a, char *b)
 	char	*joined;
 	size_t	len;
 
+	//printf("4,1\n");
 	len = ft_strlen(a) + ft_strlen(b);
 	joined = (char *)ft_calloc(1, ft_strlen(a) + BUFFER_SIZE + 1);
 	if (joined == NULL)
 		return (joined);
 	ft_strlcpy(joined, a, ft_strlen(a) + 1);
 	ft_strlcat(joined, b, len + 1);
+	//printf("joined : %s\n", joined);
 	return (joined);
 }
 
@@ -77,19 +76,38 @@ static char	*get_line_with_n(int fd, char **buf)
 {
 	int		go;
 	char	*tmp;
+	char 	*joined;
+	ssize_t		knall;
 
 	go = 1;
+	if (ft_strchr(*buf, '\n'))
+		return (*buf);
 	while (go)
 	{
+		//if (ft_strchr(*buf, '\n'))
+		//	break ;
+	//	printf("1\n");
 		tmp = (char *)ft_calloc(1, BUFFER_SIZE + 1);
 		if (tmp == NULL)
 			return (tmp);
-		read(fd, tmp, BUFFER_SIZE);
-		if (ft_strchr(tmp, '\n'))
+		//printf("2\n");
+		knall = read(fd, tmp, BUFFER_SIZE);
+		//printf("3\n");
+		if (ft_strchr(tmp, '\n') || ft_strchr(tmp, EOF))
 			go = 0;
-		*buf = gnl_join(*buf, tmp);
+		joined = gnl_join(*buf, tmp);
+		if (joined == NULL)
+			return (joined);
+		*buf = joined;
+		free(joined);
+		//*buf = gnl_join(*buf, tmp);
+		//printf("*buf : %s\n", *buf);
+		if (!tmp)
+			return (0);
 		free(tmp);
-		//printf("joined in loop: %s\n", *buf);
+		//printf("4\n");
+		if (knall == 0)
+			return (0);
 	}
 	return (*buf);
 }
@@ -103,11 +121,18 @@ char    *get_next_line(int fd)
 		buf = "";
 	if (fd <= 0 || BUFFER_SIZE <= 0)
 		return NULL;
-	get_line_with_n(fd, &buf);
-	//printf("vor bearbeiten: %s\n", buf);
+	line = get_line_with_n(fd, &buf);
+	//printf("6\n");
+	//printf("line gnl : %s\n", line);
+	//if (line == NULL)
+		//return (0);
+	//printf("7\n");
 	line = bearbeiten(&buf);
-	//printf("nach bearbeiten buf: %s\n", buf);
-	//printf("nach bearbeiten buffer: %s\n", line);
+	//printf("8\n");
+	if (line == NULL)
+		return (0);
+	//printf("buf : %s\n", buf);
+	//printf("line : %s\n", line);
 	return (line);
 }
 

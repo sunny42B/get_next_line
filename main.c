@@ -12,8 +12,10 @@ int main()
 	while (i < 5)
 	{
 		result = get_next_line(fd);
-		printf("main: %s\n", result);
+		printf("%s", result);
+		free(result);
 		i++;
 	}
+	close(fd);
 	return (0);
 }
