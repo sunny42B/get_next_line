@@ -1,5 +1,5 @@
-erste linie mit\n 
-zweite linie einfach mit enter
+erste linie mit\n
+zweite linie einfach mit en
 irgendwas einfach so.. blablabla wieder enter
 
 read liest jeweils bufsize

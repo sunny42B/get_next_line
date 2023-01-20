@@ -9,10 +9,10 @@ int main()
 	fd = open("testfile.txt", O_RDONLY);
 	if (fd <= 0)
 		return (1);
-	while (i < 2)
+	while (i < 5)
 	{
 		result = get_next_line(fd);
-		printf("%s\n", result);
+		printf("main: %s\n", result);
 		i++;
 	}
 	return (0);
