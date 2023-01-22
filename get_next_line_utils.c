@@ -42,6 +42,8 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);
@@ -71,6 +73,8 @@ char	*ft_strchr(const char *s, int c)
 	char	*b;
 
 	i = 0;
+	if (!s)
+		return (0);
 	a = (char) c;
 	b = (char *) s;
 	while (b[i])
@@ -84,28 +88,22 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-void	*ft_calloc(size_t num, size_t size)
+void	*ft_calloc_gnl(size_t num, size_t size)
 {
 	void	*s;
+	size_t	i;
 
+	i = 0;
 	s = (void *) malloc(num * size);
 	if (s == NULL)
 		return (0);
 	else
 	{
-		ft_bzero(s, num * size);
+		while (i < num * size)
+		{
+			((char *) s)[i] = '\0';
+			i++;
+		}
 		return (s);
-	}
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char *) s)[i] = '\0';
-		i++;
 	}
 }

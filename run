@@ -1,6 +1,5 @@
 #!/bin/bash
 make fclean
 make
-cc -g -O1 main.c get_next_line.a
-clear
-valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out
+cc -Wall -Wextra -Werror -ggdb3 main.c get_next_line.a
+help50 valgrind --leak-check=full ./a.out

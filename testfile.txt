@@ -5,7 +5,7 @@ irgendwas einfach so.. blablabla wieder enter
 read liest jeweils bufsize
 
 daher strjoin .. und zwischenspeichern????
-
+--log-file=valgrind.rpt -s 
 auszuschliessen
 read returned 0, wenn eof und negativ, wenn error
 wenn malloc null

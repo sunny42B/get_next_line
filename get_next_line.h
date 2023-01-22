@@ -25,9 +25,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
-char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t num, size_t size);
-void	ft_bzero(void *s, size_t n);
+void	*ft_calloc_gnl(size_t num, size_t size);
 char    *get_next_line(int fd);
 #endif

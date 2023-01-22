@@ -22,26 +22,31 @@ static char	*bearbeiten(char **buf)
 	char	*line;
 	char	*newbuf;
 	size_t		len;
-	size_t		i, j;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	j = 0;
-
-	//printf("5\n");
 	len = ft_strlen(*buf);
-	while ((*buf)[i] != '\0')
+	while ((*buf)[i])
 	{
 		if ((*buf)[i] == '\n')
 			break ;
 		i++;
 	}
-	//printf("%lu\n", i);
-	line = (char *)ft_calloc(1, i + 2);
+	line = (char *)ft_calloc_gnl(1, i + 2);// +2 fuer \n und \0
 	ft_strlcpy(line, *buf, i + 2);
-	len = len - i;
+	if (len == i)//der gesamte buf wurde in line kopiert
+	{
+		free(*buf);
+		*buf = NULL;
+		//free(*buf);
+		return (line);
+	}
+	len = len - i;//(hier ist \n noch mit dabei)
 	newbuf = *buf;
-	*buf = (char *)ft_calloc(1, len + 1);
-	i++;
+	*buf = (char *)ft_calloc_gnl(1, len);
+	i++;//\n ueberspringen
 	while (i < ft_strlen(newbuf))
 	{
 		(*buf)[j] = newbuf[i];
@@ -49,10 +54,6 @@ static char	*bearbeiten(char **buf)
 		j++;
 	}
 	free(newbuf);
-	//if (ft_strchr(*buf, EOF))
-	//	return (*buf);
-	//printf("*buf : %s\n", *buf);
-	//printf("line : %s\n", line);
 	return (line);
 }
 
@@ -61,14 +62,15 @@ static char	*gnl_join(char *a, char *b)
 	char	*joined;
 	size_t	len;
 
-	//printf("4,1\n");
 	len = ft_strlen(a) + ft_strlen(b);
-	joined = (char *)ft_calloc(1, ft_strlen(a) + BUFFER_SIZE + 1);
+	joined = (char *)ft_calloc_gnl(1, ft_strlen(a) + BUFFER_SIZE + 1);
 	if (joined == NULL)
 		return (joined);
 	ft_strlcpy(joined, a, ft_strlen(a) + 1);
 	ft_strlcat(joined, b, len + 1);
-	//printf("joined : %s\n", joined);
+	//if (!a)
+	//	free(a);
+	//free(b);
 	return (joined);
 }
 
@@ -76,37 +78,30 @@ static char	*get_line_with_n(int fd, char **buf)
 {
 	int		go;
 	char	*tmp;
-	char 	*joined;
-	ssize_t		knall;
+	char	*joined;
+	ssize_t		readreturn;
 
 	go = 1;
 	if (ft_strchr(*buf, '\n'))
 		return (*buf);
 	while (go)
 	{
-		//if (ft_strchr(*buf, '\n'))
-		//	break ;
-	//	printf("1\n");
-		tmp = (char *)ft_calloc(1, BUFFER_SIZE + 1);
+		tmp = (char *)ft_calloc_gnl(1, BUFFER_SIZE + 1);
 		if (tmp == NULL)
 			return (tmp);
-		//printf("2\n");
-		knall = read(fd, tmp, BUFFER_SIZE);
-		//printf("3\n");
-		if (ft_strchr(tmp, '\n') || ft_strchr(tmp, EOF))
+		readreturn = read(fd, tmp, BUFFER_SIZE);
+		if (ft_strchr(tmp, '\n'))
 			go = 0;
 		joined = gnl_join(*buf, tmp);
+		free(tmp);
+		free(*buf);
 		if (joined == NULL)
 			return (joined);
 		*buf = joined;
-		free(joined);
-		//*buf = gnl_join(*buf, tmp);
-		//printf("*buf : %s\n", *buf);
-		if (!tmp)
-			return (0);
-		free(tmp);
-		//printf("4\n");
-		if (knall == 0)
+		//free(joined);
+		if (readreturn > 0 && readreturn < BUFFER_SIZE)//equivalent to has reached the eof
+			return (*buf);
+		if (readreturn <= 0)//nothing read or error
 			return (0);
 	}
 	return (*buf);
@@ -118,21 +113,15 @@ char    *get_next_line(int fd)
 	char		*line;
 
 	if (!buf)
-		buf = "";
+		buf = (char *)ft_calloc_gnl(1, 1);
 	if (fd <= 0 || BUFFER_SIZE <= 0)
 		return NULL;
 	line = get_line_with_n(fd, &buf);
-	//printf("6\n");
-	//printf("line gnl : %s\n", line);
-	//if (line == NULL)
-		//return (0);
-	//printf("7\n");
-	line = bearbeiten(&buf);
-	//printf("8\n");
 	if (line == NULL)
 		return (0);
-	//printf("buf : %s\n", buf);
-	//printf("line : %s\n", line);
+	line = bearbeiten(&buf);
+	if (line == NULL)
+		return (0);
 	return (line);
 }
 

@@ -16,7 +16,8 @@ SRCS		= 	get_next_line_utils.c \
 OBJS		= ${SRCS:.c=.o}
 
 NAME		= get_next_line.a
-CC			= cc -Wall -Wextra -Werror -D BUFFER_SIZE=10 -g
+CC			= cc -Wall -Wextra -Werror -D BUFFER_SIZE=5
+# -g
 
 %.o: %.c libft.h
 			${CC} -I. -c $< -o ${<:.c=.o}
