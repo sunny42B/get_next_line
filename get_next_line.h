@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sung-hle <sung-hle@42student.berlin.de>    +#+  +:+       +#+        */
+/*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 14:21:13 by sung-hle          #+#    #+#             */
-/*   Updated: 2022/12/13 15:21:17 by sung-hle         ###   ########.de       */
+/*   Updated: 2023/01/24 01:15:04 by sung-hle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
-void	*ft_calloc_gnl(size_t num, size_t size);
-char    *get_next_line(int fd);
+void	*ft_calloc_gnl(size_t size);
+char	*get_next_line(int fd);
 #endif
