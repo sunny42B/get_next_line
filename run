@@ -1,5 +1,0 @@
-#!/bin/bash
-make fclean
-make
-cc -Wall -Wextra -Werror -ggdb3 main.c get_next_line.a
-help50 valgrind --leak-check=full ./a.out

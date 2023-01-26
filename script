@@ -1,6 +1,0 @@
-#!/bin/bash
-make fclean
-make
-cc -g -O1 main.c get_next_line.a
-clear
-valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out

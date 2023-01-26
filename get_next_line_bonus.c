@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sung-hle <sung-hle@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 05:48:25 by sung-hle          #+#    #+#             */
-/*   Updated: 2023/01/25 13:56:15 by sung-hle         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:39:59 by sung-hle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*justline(char **buf, size_t *i, size_t *len)
 {
@@ -116,21 +116,21 @@ static char	*get_line_with_n(int fd, char **buf)
 
 char	*get_next_line(int fd)
 {
-	static char	*buf;
+	static char	*buf[4096];
 	char		*line;
 
-	if (!buf)
-		buf = (char *)ft_calloc_gnl(1);
+	if (!(buf[fd]))
+		buf[fd] = (char *)ft_calloc_gnl(1);
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (freebuf(&buf));
-	if (ft_strchr(buf, '\n'))
-		line = bearbeiten(&buf);
+		return (freebuf(&buf[fd]));
+	if (ft_strchr(buf[fd], '\n'))
+		line = bearbeiten(&buf[fd]);
 	else
 	{
-		line = get_line_with_n(fd, &buf);
+		line = get_line_with_n(fd, &buf[fd]);
 		if (line == NULL)
-			return (freebuf(&buf));
-		line = bearbeiten(&buf);
+			return (freebuf(&buf[fd]));
+		line = bearbeiten(&buf[fd]);
 	}
 	if (line == NULL)
 		return (0);
