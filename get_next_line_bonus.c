@@ -35,7 +35,7 @@ static char	*justline(char **buf, size_t *i, size_t *len)
 	return (line);
 }
 
-static char	*bearbeiten(char **buf)
+static char	*nline_andbuf(char **buf)
 {
 	char		*line;
 	char		*newbuf;
@@ -124,13 +124,13 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (freebuf(&buf[fd]));
 	if (ft_strchr(buf[fd], '\n'))
-		line = bearbeiten(&buf[fd]);
+		line = nline_andbuf(&buf[fd]);
 	else
 	{
 		line = get_line_with_n(fd, &buf[fd]);
 		if (line == NULL)
 			return (freebuf(&buf[fd]));
-		line = bearbeiten(&buf[fd]);
+		line = nline_andbuf(&buf[fd]);
 	}
 	if (line == NULL)
 		return (0);
